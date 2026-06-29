@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme breathe
+          pip install sphinx sphinx_rtd_theme breathe sphinx_copybutton
 
       - name: Check for Broken Links
         run: |
