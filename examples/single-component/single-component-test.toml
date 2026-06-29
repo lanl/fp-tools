@@ -1,0 +1,70 @@
+# --------- Input Section ---------
+[input]
+  file            = "dump-prod.xyz"    # Path to trajectory file
+  end_frame       = 49999             # Last frame (inclusive)       
+
+[output]
+  path            = "single-comparison"          # Directory to save output files
+
+[properties]
+  dt = 0.003965                     # Timestep between consecutive frames
+
+# --------- Analysis Configuration ---------
+[analysis]
+  
+  #---- Mean Squared Displacement (MSD) ----
+  [analysis.msd]
+    enabled     = true           
+    max_lag     = 50000
+    groups      = ["all"]
+    # plot_format = ""
+
+    # Optional: Choose how many figures to output as well as what curves go on them
+    # curves = [
+    #   [  # Plot 1
+    #     { types = ["1"], label = "1" },
+    #     { types = ["2"], label = "2" },
+    #     { types = ["3"], label = "3" },
+    #   ]
+    # ]
+
+  # ---- Radial Distribution Function (RDF) ----
+  [analysis.rdf]
+    enabled     = true
+    dr          = 0.00449645
+    # LAMMPS : dr          = 0.00449645
+    r_max       = 2.5
+    pairs       = [["C", "C"]]
+    # plot_format = "png"
+
+    # curves = [
+    #     [  # Plot 1
+    #         { types = ["1", "2"], label = "1-2" },
+    #         { types = ["1", "1"], label = "1-1" }
+    #     ],
+    #     [  # Plot 2
+    #         # { types = ["1", "2"], label = "1-2" }
+    #     ]
+    # ]
+
+  # ---- Mean First Passage Time (MFPT) / D(r) ----
+  [analysis.mfpt]
+    enabled = true
+    dt = 0.003965 
+    dr = 0.00449645
+    r_max = 3
+    #plot_dofr = true
+    #plot_format = ""
+  #
+  # # ---- Correlation Functions ----
+  # [analysis.correlations]
+  #   enabled = false
+  #   plot_format = "svg"
+  #   
+  #   # Built-in correlation functions
+  #   builtin = ["vacf"]
+  #
+  #   # Generic pairwise correlations
+  #   custom = [
+  #     { name = "sine_corr", files = ["sine_wave.dat"], columns = [2] },
+  #   ]
