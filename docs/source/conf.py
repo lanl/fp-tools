@@ -3,8 +3,14 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+# -- Path setup --------------------------------------------------------------
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
 import os, sys
-sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../../src'))
 
 # -- Project information -----------------------------------------------------
 project = 'FP-Tools'
@@ -25,8 +31,9 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'breeze'
 html_theme_options = {
+    "header_tabs": False,
     "collapse_navigation": False,
     "sticky_navigation": True,      # Sidebar stays visible when scrolling
     "navigation_depth": -1,         # Show all levels (no limit)
@@ -40,3 +47,5 @@ primary_domain = 'cpp'
 
 # Tell Sphinx what the pygments highlight language should be
 highlight_language = 'cpp'
+
+
