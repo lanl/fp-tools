@@ -40,6 +40,8 @@ __pycache__/
 # === Trajectories and Text Files ===
 
 # === DOCUMENTATION ===
+docs/build/
+.doctrees/
 _site/
 *.html
 *.pdf
