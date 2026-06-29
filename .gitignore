@@ -1,0 +1,51 @@
+# === BUILD DIRECTORIES ===
+/build/
+/bin/
+/out/
+
+# === OS-SPECIFIC FILES ===
+.DS_Store
+
+# === CMAKE BUILD FILES ===
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# === CUDA INTERMEDIATE FILES ===
+*.i
+*.ii
+*.gpu
+*.ptx
+*.cubin
+*.fatbin
+
+# === COMPILER OUTPUT ===
+*.slo
+*.lo
+*.o
+*.obj
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+*.so
+
+# === PYTHON BYTECODE AND CACHE ===
+__pycache__/
+*.pyc
+*.pyo
+
+# === Trajectories and Text Files ===
+
+# === DOCUMENTATION ===
+_site/
+*.html
+*.pdf
+*.aux
+*.toc
+*.nav
+*.snm
+*.vrb
+*.out
